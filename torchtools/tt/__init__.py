@@ -1,19 +1,13 @@
-import numpy as np
-import torch
-from torch import nn
-from torch import optim
-from torch import cuda
-from torch import utils
-from torch.nn import functional as F
-from torch.utils.data import *
-from torch.distributions import *
-from torchtools import tt
+from torchtools.tt.arg import _parse_opts
+from torchtools.tt.utils import *
+from torchtools.tt.layer import *
+from torchtools.tt.logger import *
+from torchtools.tt.stat import *
+from torchtools.tt.trainer import *
 
 
 __author__ = 'namju.kim@kakaobrain.com'
 
 
-# initialize seed
-if tt.arg.seed:
-    np.random.seed(tt.arg.seed)
-    torch.manual_seed(tt.arg.seed)
+# global command line arguments
+arg = _parse_opts()
